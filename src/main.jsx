@@ -8,6 +8,7 @@ import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import ErrorPage from "./components/Error/ErrorPage";
 import User from "./components/User/User";
+import GitHub from "./components/GitHub/GitHub";
 
 import "./index.css";
 
@@ -21,6 +22,16 @@ const router = createBrowserRouter([
       { path: "about", element: <About /> },
       { path: "contact", element: <Contact /> },
       { path: "user/:userId", element: <User /> },
+      {
+        path: "github",
+        element: <GitHub />,
+        loader: async () => {
+          const res = await fetch(
+            "https://api.github.com/users/hiteshchoudhary",
+          );
+          return res.json();
+        },
+      },
     ],
   },
 ]);
