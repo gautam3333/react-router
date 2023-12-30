@@ -7,6 +7,7 @@ import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import ErrorPage from "./components/Error/ErrorPage";
+import User from "./components/User/User";
 
 import "./index.css";
 
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
       { path: "", element: <Home /> },
       { path: "about", element: <About /> },
       { path: "contact", element: <Contact /> },
+      { path: "user/:userId", element: <User /> },
     ],
   },
 ]);
